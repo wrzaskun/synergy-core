@@ -25,6 +25,10 @@ else()
     option (SYNERGY_BUILD_LEGACY_INSTALLER "Build the legacy installer" ON)
 endif()
 
+set(ENV{SYNERGY_ENTERPRISE} 1)
+set(ENV{SYNERGY_NO_TESTS} 1)
+message($ENV{SYNERGY_ENTERPRISE})
+
 if (DEFINED ENV{SYNERGY_NO_TESTS})
     option (BUILD_TESTS "Override building of tests" OFF)
 else()
